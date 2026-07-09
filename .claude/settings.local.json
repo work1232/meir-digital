@@ -3,7 +3,15 @@
     "allow": [
       "PowerShell(node --version; npm --version; \\(Get-Command node -ErrorAction SilentlyContinue\\).Source)",
       "WebFetch(domain:yosi1223.github.io)",
-      "PowerShell([Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; $ProgressPreference = 'SilentlyContinue'; New-Item -ItemType Directory -Force \"C:\\\\Users\\\\meir\\\\tools\" | Out-Null; Invoke-WebRequest \"https://nodejs.org/dist/v22.23.1/node-v22.23.1-win-x64.zip\" -OutFile \"C:\\\\Users\\\\meir\\\\tools\\\\node.zip\"; \\(Get-Item \"C:\\\\Users\\\\meir\\\\tools\\\\node.zip\"\\).Length)"
+      "PowerShell([Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; $ProgressPreference = 'SilentlyContinue'; New-Item -ItemType Directory -Force \"C:\\\\Users\\\\meir\\\\tools\" | Out-Null; Invoke-WebRequest \"https://nodejs.org/dist/v22.23.1/node-v22.23.1-win-x64.zip\" -OutFile \"C:\\\\Users\\\\meir\\\\tools\\\\node.zip\"; \\(Get-Item \"C:\\\\Users\\\\meir\\\\tools\\\\node.zip\"\\).Length)",
+      "PowerShell($env:Path = \"C:\\\\Users\\\\meir\\\\tools\\\\node;$env:Path\"; Set-Location C:\\\\Users\\\\meir\\\\website; npm install framer-motion lucide-react next-intl next-themes @supabase/supabase-js @supabase/ssr; npm install -D tw-animate-css)",
+      "PowerShell($env:Path = \"C:\\\\Users\\\\meir\\\\tools\\\\node;$env:Path\"; Set-Location C:\\\\Users\\\\meir\\\\website; npx --yes shadcn@latest init --yes --base-color neutral)",
+      "PowerShell($env:Path = \"C:\\\\Users\\\\meir\\\\tools\\\\node;$env:Path\"; Set-Location C:\\\\Users\\\\meir\\\\website; npx shadcn@latest init --help)",
+      "PowerShell($env:Path = \"C:\\\\Users\\\\meir\\\\tools\\\\node;$env:Path\"; Set-Location C:\\\\Users\\\\meir\\\\website; npx shadcn@latest init -y -b radix -p nova --rtl --no-monorepo)",
+      "PowerShell(Remove-Item C:\\\\Users\\\\meir\\\\website\\\\src\\\\app\\\\layout.tsx, C:\\\\Users\\\\meir\\\\website\\\\src\\\\app\\\\page.tsx, C:\\\\Users\\\\meir\\\\website\\\\src\\\\app\\\\favicon.ico, C:\\\\Users\\\\meir\\\\website\\\\public\\\\next.svg, C:\\\\Users\\\\meir\\\\website\\\\public\\\\vercel.svg, C:\\\\Users\\\\meir\\\\website\\\\public\\\\file.svg, C:\\\\Users\\\\meir\\\\website\\\\public\\\\globe.svg, C:\\\\Users\\\\meir\\\\website\\\\public\\\\window.svg -Force; $env:Path = \"C:\\\\Users\\\\meir\\\\tools\\\\node;$env:Path\"; Set-Location C:\\\\Users\\\\meir\\\\website; npm install @vercel/analytics)",
+      "PowerShell($env:Path = \"C:\\\\Users\\\\meir\\\\tools\\\\node;$env:Path\"; Set-Location C:\\\\Users\\\\meir\\\\website; npm run build)",
+      "PowerShell(Stop-Process -Id 8476 -Force -Confirm:$false; Start-Sleep -Seconds 1; \\(Get-NetTCPConnection -LocalPort 3000 -ErrorAction SilentlyContinue\\) -eq $null)",
+      "PowerShell(Set-Location C:\\\\Users\\\\meir\\\\website; git status --short | Select-Object -First 5; git log --oneline; \\(Get-Command gh -ErrorAction SilentlyContinue\\) -ne $null; git config user.name; git config user.email)"
     ]
   }
 }

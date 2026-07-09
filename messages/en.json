@@ -1,0 +1,482 @@
+{
+  "meta": {
+    "home": {
+      "title": "Meir Digital — Custom Website Development",
+      "description": "My work — your website. Fast, beautifully designed, custom-built websites for businesses: landing pages, business sites and advanced web apps. Fast delivery, free revisions and personal guidance."
+    },
+    "about": {
+      "title": "About — Meir Digital",
+      "description": "Meet Meir — a web developer with deep experience, fast delivery and full transparency. Here's how I work."
+    },
+    "services": {
+      "title": "Services — Meir Digital",
+      "description": "Landing pages, business websites and fully custom builds — with everything explained, free revisions, personal design and high availability."
+    },
+    "portfolio": {
+      "title": "Portfolio — Meir Digital",
+      "description": "Real projects and concept designs — this is what websites built with attention to every detail look like."
+    },
+    "pricing": {
+      "title": "Packages & Pricing — Meir Digital",
+      "description": "Three transparent packages: Basic ₪300, Business ₪600 and Premium ₪1000. Full comparison of everything included."
+    },
+    "faq": {
+      "title": "FAQ — Meir Digital",
+      "description": "How long does a website take? What do free revisions include? All the answers to common questions."
+    },
+    "contact": {
+      "title": "Contact — Meir Digital",
+      "description": "Let's build something amazing together — WhatsApp, phone or a quick form. Fast response guaranteed."
+    },
+    "login": {
+      "title": "Log In — Meir Digital",
+      "description": "Log in to your Meir Digital personal area."
+    },
+    "register": {
+      "title": "Sign Up — Meir Digital",
+      "description": "Create your Meir Digital personal account."
+    },
+    "account": {
+      "title": "My Account — Meir Digital",
+      "description": "Your personal area at Meir Digital."
+    },
+    "admin": {
+      "title": "Admin Dashboard — Meir Digital",
+      "description": "The Meir Digital admin dashboard."
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "pricing": "Pricing",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "account": "My Account",
+    "admin": "Admin",
+    "login": "Log In",
+    "logout": "Log Out",
+    "menu": "Navigation menu"
+  },
+  "common": {
+    "brand": "Meir Digital",
+    "tagline": "Web Developer",
+    "whatsapp": "Chat on WhatsApp",
+    "call": "Call Now",
+    "getQuote": "Get a Quote",
+    "viewPortfolio": "View Portfolio",
+    "learnMore": "Learn More",
+    "backHome": "Back to Home",
+    "toggleTheme": "Toggle theme",
+    "switchToLight": "Switch to light mode",
+    "switchToDark": "Switch to dark mode",
+    "languageToggle": "עברית",
+    "oneTime": "one-time",
+    "included": "Included",
+    "notIncluded": "Not included",
+    "new": "New"
+  },
+  "hero": {
+    "badge": "Custom Website Development",
+    "titleLine1": "My Work —",
+    "titleLine2": "Your Website",
+    "subtitle": "I'm Meir, a web developer. I build fast, beautifully designed, precise websites for businesses — with close guidance, full transparency and fast delivery.",
+    "ctaPrimary": "Let's Talk on WhatsApp",
+    "ctaSecondary": "View My Portfolio",
+    "scrollDown": "Scroll down",
+    "techStrip": "The technologies I work with",
+    "mockBrowserUrl": "your-new-website.com",
+    "whatsappMessage": "Hi Meir! I saw your website and would love to hear about building a site"
+  },
+  "stats": {
+    "title": "The numbers speak",
+    "items": {
+      "delivery": { "value": "7", "suffix": "", "label": "working days to deliver a basic site" },
+      "transparency": { "value": "100", "suffix": "%", "label": "transparency and clear expectations" },
+      "packages": { "value": "3", "suffix": "", "label": "flexible packages for every budget" },
+      "availability": { "value": "24", "suffix": "/6", "label": "high availability for every question" }
+    }
+  },
+  "about": {
+    "kicker": "Who I Am",
+    "title": "Nice to meet you, I'm Meir",
+    "body": "A web developer with a real passion for design and the small details. I personally guide every client — from the first idea until the site is live — explaining everything in plain language, with no jargon and no surprises.",
+    "storyTitle": "My Story",
+    "story1": "I started building websites out of curiosity — and stayed for that moment when a client sees their site for the first time. For me, every project is a chance to build something that truly works: fast, beautiful, and driving real results.",
+    "story2": "I believe building a website shouldn't be complicated or stressful. That's why I focus on precise expectations, clear timelines and real availability — you always know where the project stands and what comes next.",
+    "valuesTitle": "The values that drive me",
+    "values": {
+      "fast": { "title": "Fast Delivery", "desc": "Meeting tight deadlines — without compromising on quality" },
+      "quality": { "title": "Quality Build", "desc": "Clean code, polished design and world-class technologies" },
+      "expectations": { "title": "Clear Expectations", "desc": "Full transparency — you know exactly what you get and when" },
+      "experience": { "title": "Deep Experience", "desc": "Extensive know-how in building business websites that deliver" }
+    },
+    "cta": "Want to hear more? Let's talk"
+  },
+  "services": {
+    "kicker": "What You Get",
+    "title": "Personal service, professional results",
+    "subtitle": "Every project gets my full attention — from the first call until long after launch",
+    "promises": {
+      "explain": {
+        "title": "Everything Explained",
+        "desc": "I guide you step by step and explain every decision in plain language — you're always in the picture"
+      },
+      "fixes": {
+        "title": "Free Revisions",
+        "desc": "Revision rounds are included in every package — up to unlimited in Premium"
+      },
+      "design": {
+        "title": "Custom-Tailored Design",
+        "desc": "Your website is designed around your business — your colors, character and goals"
+      },
+      "availability": {
+        "title": "High Availability",
+        "desc": "Quick answers to every question — on WhatsApp or by phone, whenever suits you"
+      }
+    },
+    "offeringsTitle": "What I Build",
+    "offeringsSubtitle": "From a focused landing page to a complete system with a member area — all fully customized",
+    "offerings": {
+      "landing": {
+        "title": "Landing Page",
+        "desc": "A focused, lightning-fast page that converts visitors into customers — perfect for campaigns",
+        "features": ["Conversion-focused design", "Built-in lead form", "Maximum loading speed"]
+      },
+      "business": {
+        "title": "Business Website",
+        "desc": "A complete business site that presents your company in the most professional way",
+        "features": ["Custom number of pages", "Unique brand design", "Google-ready SEO"]
+      },
+      "custom": {
+        "title": "Fully Custom Website",
+        "desc": "Tailor-made development — user system, member area, admin dashboard and anything you dream of",
+        "features": ["Users & admin system", "Development on demand", "Long-term support"]
+      }
+    },
+    "ctaStrip": "Not sure what fits? Let's figure it out together"
+  },
+  "whyUs": {
+    "kicker": "Why Me",
+    "title": "A website isn't an expense — it's an investment",
+    "subtitle": "A good website pays for itself: it works for you 24/7, looks professional and brings in new customers.",
+    "points": [
+      "Premium design that looks like a big agency — at an independent developer's price",
+      "Exceptionally fast site — because every second of loading costs you customers",
+      "Perfectly adapted to mobile, tablet and every screen",
+      "Built right for Google (SEO) from day one",
+      "Direct contact with me — no call centers, no waiting, no middlemen"
+    ]
+  },
+  "features": {
+    "kicker": "In Every Website",
+    "title": "Advanced technology, high standards",
+    "items": {
+      "speed": { "title": "Lightning Fast", "desc": "Instant loading thanks to Next.js — the technology behind the world's biggest sites" },
+      "responsive": { "title": "Perfectly Responsive", "desc": "Looks stunning on every screen — from small phones to ultra-wide displays" },
+      "seo": { "title": "Google Ready", "desc": "Built-in SEO foundations that help customers find you" },
+      "animations": { "title": "Living Animations", "desc": "Micro-interactions and subtle motion that turn browsing into an experience" },
+      "secure": { "title": "Secure", "desc": "Password hashing, user authentication and strict data protection" },
+      "darkmode": { "title": "Dark & Light Mode", "desc": "The site adapts itself to each visitor's preference — automatically" }
+    }
+  },
+  "process": {
+    "kicker": "How It Works",
+    "title": "From idea to live website — in 5 steps",
+    "steps": [
+      { "title": "Intro Call", "desc": "Together we understand what your business needs, your goals and which package fits" },
+      { "title": "Planning & Design", "desc": "We build the structure and initial design — and approve every detail together" },
+      { "title": "Development", "desc": "The site comes to life — clean, fast, secure code with regular updates to you" },
+      { "title": "Feedback & Revisions", "desc": "We go over everything together, polishing and fixing until you're happy" },
+      { "title": "Launch", "desc": "We connect the domain, go live — and I stay available for every question" }
+    ]
+  },
+  "portfolio": {
+    "kicker": "Portfolio",
+    "title": "Projects that speak for themselves",
+    "subtitle": "A real live project, alongside concept designs that show what we can build together",
+    "liveBadge": "Live",
+    "conceptBadge": "Concept",
+    "featured": {
+      "name": "Shefa at Yossi Mozes",
+      "type": "Business website — fresh produce delivery",
+      "desc": "A complete business site for a family business: fresh produce catalog, weekly deals, gallery and a quick order form — focused on a simple mobile ordering experience.",
+      "cta": "View Live Site",
+      "tags": ["Business site", "Product catalog", "Order form", "Mobile-first"]
+    },
+    "conceptsTitle": "Concept Designs",
+    "concepts": [
+      { "name": "Architecture Studio", "type": "Minimalist business site", "desc": "Concept for a high-end studio site with a project gallery and clean lines" },
+      { "name": "Chef Restaurant", "type": "Digital menu & reservations", "desc": "Concept for a restaurant site with a live menu, gallery and table booking" },
+      { "name": "Personal Trainer", "type": "Converting landing page", "desc": "Concept for a landing page with training plans, reviews and a signup form" }
+    ],
+    "ctaStrip": "Want a website like this of your own?",
+    "ctaButton": "Let's Start"
+  },
+  "pricing": {
+    "kicker": "Packages & Pricing",
+    "title": "Choose the package that fits you",
+    "subtitle": "Transparent pricing, no surprises. Not sure? Talk to me and we'll tailor a personal package.",
+    "popularBadge": "Best Value",
+    "priceNote": "Prices are a starting point — every project gets a precise, personalized quote",
+    "viewFull": "See the full package comparison →",
+    "plans": {
+      "basic": {
+        "name": "Basic",
+        "desc": "Perfect for a landing page or small site",
+        "price": "300",
+        "features": [
+          "Up to 2 pages",
+          "Design adapted from a premium template",
+          "Perfect mobile fit",
+          "Contact / WhatsApp form",
+          "2 free revision rounds",
+          "Delivery within 7 working days"
+        ],
+        "whatsapp": "Hi Meir! I'd love a quote for the Basic package"
+      },
+      "business": {
+        "name": "Business",
+        "desc": "The perfect balance for a growing business",
+        "price": "600",
+        "features": [
+          "Up to 5 pages",
+          "Fully personal brand design",
+          "Advanced animations & effects",
+          "Basic Google SEO",
+          "5 free revision rounds",
+          "Delivery within 14 working days",
+          "1 month of free support"
+        ],
+        "whatsapp": "Hi Meir! I'd love a quote for the Business package"
+      },
+      "premium": {
+        "name": "Premium",
+        "desc": "The full experience — no compromises",
+        "price": "1000",
+        "features": [
+          "Up to 10 pages",
+          "Premium design + advanced animations",
+          "User system & member area",
+          "Admin dashboard",
+          "Extended SEO",
+          "Unlimited free revisions for 2 months",
+          "Priority availability & scheduling",
+          "3 months of free support"
+        ],
+        "whatsapp": "Hi Meir! I'd love a quote for the Premium package"
+      }
+    },
+    "comparison": {
+      "title": "Full package comparison",
+      "feature": "What's included",
+      "rows": {
+        "pages": { "label": "Pages", "basic": "Up to 2", "business": "Up to 5", "premium": "Up to 10" },
+        "design": { "label": "Design", "basic": "Adapted template", "business": "Fully personal", "premium": "Premium +" },
+        "animations": { "label": "Animations", "basic": "Basic", "business": "Advanced", "premium": "Advanced +" },
+        "responsive": { "label": "Full mobile fit", "basic": "true", "business": "true", "premium": "true" },
+        "contactForm": { "label": "Contact form", "basic": "true", "business": "true", "premium": "true" },
+        "seo": { "label": "Google SEO", "basic": "false", "business": "Basic", "premium": "Extended" },
+        "auth": { "label": "Member area & users", "basic": "false", "business": "false", "premium": "true" },
+        "admin": { "label": "Admin dashboard", "basic": "false", "business": "false", "premium": "true" },
+        "fixes": { "label": "Free revision rounds", "basic": "2", "business": "5", "premium": "Unlimited for 2 months" },
+        "delivery": { "label": "Delivery time", "basic": "Up to 7 working days", "business": "Up to 14 working days", "premium": "Custom" },
+        "support": { "label": "Support", "basic": "false", "business": "1 month", "premium": "3 months" }
+      }
+    }
+  },
+  "faq": {
+    "kicker": "FAQ",
+    "title": "Everything you wanted to know",
+    "subtitle": "Didn't find an answer? Send me a message and I'll be happy to help",
+    "items": [
+      {
+        "q": "How long does it take to build a website?",
+        "a": "It depends on the package: a basic site is delivered within 7 working days, a business site within 14, and a premium project by scope — we always agree on an exact timeline in advance."
+      },
+      {
+        "q": "What do I need to prepare before we start?",
+        "a": "Mostly — just the desire. If you have a logo, texts and photos, great; if not, I'll help you source and write everything."
+      },
+      {
+        "q": "Will my website appear on Google?",
+        "a": "Yes. Every site is built on proper SEO foundations; Business and Premium packages get extended optimization."
+      },
+      {
+        "q": "What do the free revisions include?",
+        "a": "After delivery you get revision rounds according to your package — from text and image changes to design adjustments. Everything is detailed upfront in the quote."
+      },
+      {
+        "q": "Can I upgrade my package midway?",
+        "a": "Absolutely! You can start with Basic and expand later — the site is built so it's easy to add pages and capabilities."
+      },
+      {
+        "q": "Who handles the domain and hosting?",
+        "a": "I guide you through purchasing a domain (in your name!) and deploy the site to fast, reliable hosting. Everything is transparent — you own it all."
+      },
+      {
+        "q": "How does payment work?",
+        "a": "We agree on everything upfront: a deposit at the start and the balance on delivery. No surprises, no hidden costs."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to launch your business forward?",
+    "subtitle": "Send a message now and get a quick reply — no commitment",
+    "button": "Chat on WhatsApp",
+    "whatsappMessage": "Hi Meir! I'd love to hear about building a website for my business",
+    "orCall": "or call:"
+  },
+  "contact": {
+    "kicker": "Contact",
+    "title": "Let's build something amazing together",
+    "subtitle": "The fastest way to reach me — WhatsApp. You can also leave your details in the form and I'll get back to you shortly.",
+    "whatsappCard": {
+      "title": "WhatsApp",
+      "desc": "The fastest way — quick reply guaranteed",
+      "action": "Send a Message",
+      "message": "Hi Meir! I'd love to hear about building a website"
+    },
+    "phoneCard": {
+      "title": "Phone",
+      "desc": "054-382-1419",
+      "action": "Call Now"
+    },
+    "hoursCard": {
+      "title": "Availability",
+      "desc": "High availability throughout the day — leave a message and I'll get back to you shortly"
+    },
+    "form": {
+      "title": "Or leave your details here",
+      "name": "Full name",
+      "namePlaceholder": "What's your name?",
+      "phone": "Phone",
+      "phonePlaceholder": "050-0000000",
+      "package": "Interested in a package? (optional)",
+      "packagePlaceholder": "Choose a package",
+      "packageNone": "Not sure yet",
+      "message": "A few words about the project",
+      "messagePlaceholder": "Tell me a bit about your business and what you need...",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "successTitle": "Message sent!",
+      "successDesc": "I got your details and will get back to you shortly. Want to speed things up? Ping me on WhatsApp too 😉",
+      "sendAnother": "Send another message",
+      "whatsappFallback": "The form will open WhatsApp with the details you filled in",
+      "errors": {
+        "nameRequired": "What's your name?",
+        "phoneRequired": "I need a phone number to get back to you",
+        "phoneInvalid": "That phone number doesn't look right",
+        "messageRequired": "Tell me in one sentence what you need",
+        "generic": "Something went wrong — try again or send on WhatsApp"
+      }
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Log In",
+      "subtitle": "Welcome back! Good to see you",
+      "submit": "Log In",
+      "submitting": "Logging in...",
+      "noAccount": "Don't have an account yet?",
+      "registerLink": "Sign up",
+      "success": "Logged in successfully!"
+    },
+    "register": {
+      "title": "Sign Up",
+      "subtitle": "Join the Meir Digital personal area",
+      "submit": "Create Account",
+      "submitting": "Creating account...",
+      "hasAccount": "Already have an account?",
+      "loginLink": "Log in",
+      "successTitle": "Account created successfully!",
+      "successDesc": "Welcome to your personal area"
+    },
+    "fields": {
+      "name": "Full name",
+      "namePlaceholder": "John Doe",
+      "email": "Email",
+      "emailPlaceholder": "you@example.com",
+      "phone": "Phone",
+      "phonePlaceholder": "050-0000000",
+      "password": "Password",
+      "passwordPlaceholder": "********",
+      "passwordHint": "At least 8 characters"
+    },
+    "errors": {
+      "nameRequired": "Please enter your full name",
+      "emailRequired": "Please enter an email",
+      "emailInvalid": "That email doesn't look right",
+      "phoneRequired": "Please enter a phone number",
+      "phoneInvalid": "That phone number isn't valid",
+      "passwordRequired": "Please enter a password",
+      "passwordShort": "Password must be at least 8 characters",
+      "credentials": "Wrong email or password",
+      "emailTaken": "This email is already registered",
+      "generic": "Something went wrong — try again in a moment",
+      "notConfigured": "The user system isn't connected yet (missing Supabase configuration)"
+    }
+  },
+  "account": {
+    "title": "My Personal Area",
+    "welcome": "Hello, {name}!",
+    "welcomeNoName": "Hello!",
+    "detailsTitle": "My Details",
+    "name": "Full name",
+    "email": "Email",
+    "phone": "Phone",
+    "memberSince": "Member since",
+    "save": "Save Changes",
+    "saving": "Saving...",
+    "saved": "Details updated successfully!",
+    "quickTitle": "Quick Actions",
+    "quickWhatsapp": "Chat with Meir on WhatsApp",
+    "quickPricing": "View Packages",
+    "quickPortfolio": "Portfolio",
+    "loginRequired": "You need to log in to view your personal area",
+    "goLogin": "Go to Login"
+  },
+  "admin": {
+    "title": "Admin Dashboard",
+    "subtitle": "Website inquiries and statistics",
+    "notAdmin": "You don't have permission to access this page",
+    "stats": {
+      "totalUsers": "Registered users",
+      "totalMessages": "Total inquiries",
+      "weekMessages": "Inquiries this week"
+    },
+    "chartTitle": "Inquiries in the last 14 days",
+    "messagesTitle": "Website Inquiries",
+    "noMessages": "No inquiries yet — they'll appear here as soon as someone sends the form",
+    "table": {
+      "name": "Name",
+      "phone": "Phone",
+      "package": "Package",
+      "message": "Message",
+      "date": "Date",
+      "status": "Status"
+    },
+    "statusNew": "New",
+    "statusHandled": "Handled",
+    "markHandled": "Mark as handled"
+  },
+  "footer": {
+    "tagline": "Building websites that work for you — fast, beautiful and precise.",
+    "quickLinks": "Quick Links",
+    "servicesTitle": "Services",
+    "servicesList": ["Landing pages", "Business websites", "Custom websites", "Support & maintenance"],
+    "contactTitle": "Contact",
+    "rights": "© {year} Meir Digital. All rights reserved.",
+    "madeWith": "Built with Next.js, with love"
+  },
+  "notFound": {
+    "title": "404",
+    "heading": "This page hasn't been built yet...",
+    "desc": "But I can definitely build you a whole website 😉",
+    "back": "Back to Home"
+  },
+  "preloader": {
+    "label": "Meir Digital is loading"
+  }
+}
