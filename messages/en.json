@@ -413,6 +413,7 @@
       "passwordRequired": "Please enter a password",
       "passwordShort": "Password must be at least 8 characters",
       "credentials": "Wrong email or password",
+      "emailNotConfirmed": "This account hasn't been confirmed yet — message us on WhatsApp and we'll sort it out right away",
       "emailTaken": "This email is already registered",
       "generic": "Something went wrong — try again in a moment",
       "notConfigured": "The user system isn't connected yet (missing Supabase configuration)"

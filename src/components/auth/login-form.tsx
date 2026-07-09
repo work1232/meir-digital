@@ -52,10 +52,18 @@ export function LoginForm() {
     setSubmitting(false);
 
     if (error) {
+      const message = error.message.toLowerCase();
+      const notConfirmed =
+        error.code === "email_not_confirmed" ||
+        message.includes("not confirmed");
+      const invalid =
+        error.code === "invalid_credentials" || message.includes("invalid");
       setSubmitError(
-        error.message.toLowerCase().includes("invalid")
-          ? t("errors.credentials")
-          : t("errors.generic")
+        notConfirmed
+          ? t("errors.emailNotConfirmed")
+          : invalid
+            ? t("errors.credentials")
+            : t("errors.generic")
       );
       return;
     }
