@@ -65,10 +65,11 @@ export function RegisterForm() {
     setSubmitting(false);
 
     if (error) {
+      const alreadyExists =
+        error.code === "user_already_exists" ||
+        error.message.toLowerCase().includes("already registered");
       setSubmitError(
-        error.message.toLowerCase().includes("already registered")
-          ? t("errors.emailTaken")
-          : t("errors.generic")
+        alreadyExists ? t("errors.emailTaken") : t("errors.generic")
       );
       return;
     }
