@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(node --version; npm --version; \\(Get-Command node -ErrorAction SilentlyContinue\\).Source)",
+      "WebFetch(domain:yosi1223.github.io)",
+      "PowerShell([Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; $ProgressPreference = 'SilentlyContinue'; New-Item -ItemType Directory -Force \"C:\\\\Users\\\\meir\\\\tools\" | Out-Null; Invoke-WebRequest \"https://nodejs.org/dist/v22.23.1/node-v22.23.1-win-x64.zip\" -OutFile \"C:\\\\Users\\\\meir\\\\tools\\\\node.zip\"; \\(Get-Item \"C:\\\\Users\\\\meir\\\\tools\\\\node.zip\"\\).Length)"
+    ]
+  }
+}
