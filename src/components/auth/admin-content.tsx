@@ -18,7 +18,10 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { useAuth } from "@/components/providers/auth-provider";
-import { getSupabase } from "@/lib/supabase/client";
+import {
+  getAdminDataAction,
+  markMessageHandledAction,
+} from "@/app/actions/auth";
 import type { ContactMessage } from "@/lib/types";
 
 const DAY_MS = 24 * 60 * 60 * 1000;
@@ -37,19 +40,10 @@ export function AdminContent() {
 
   useEffect(() => {
     if (!isAdmin) return;
-    const supabase = getSupabase();
-    if (!supabase) return;
-
-    supabase
-      .from("profiles")
-      .select("id", { count: "exact", head: true })
-      .then(({ count }) => setUserCount(count ?? 0));
-
-    supabase
-      .from("contact_messages")
-      .select("*")
-      .order("created_at", { ascending: false })
-      .then(({ data }) => setMessages((data as ContactMessage[]) ?? []));
+    getAdminDataAction().then((data) => {
+      setUserCount(data.usersCount);
+      setMessages(data.messages);
+    });
   }, [isAdmin]);
 
   const weekCount = useMemo(() => {
@@ -82,12 +76,7 @@ export function AdminContent() {
   const maxCount = Math.max(1, ...chartData.map((d) => d.count));
 
   const markHandled = async (id: number) => {
-    const supabase = getSupabase();
-    if (!supabase) return;
-    const { error } = await supabase
-      .from("contact_messages")
-      .update({ status: "handled" })
-      .eq("id", id);
+    const { error } = await markMessageHandledAction(id);
     if (error) {
       toast.error(tAuth("errors.generic"));
       return;

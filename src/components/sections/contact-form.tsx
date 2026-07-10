@@ -15,7 +15,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { getSupabase, isSupabaseConfigured } from "@/lib/supabase/client";
+import { isSupabaseConfigured } from "@/lib/supabase/client";
+import { submitContactAction } from "@/app/actions/auth";
 import { whatsappLink } from "@/lib/site";
 
 const PHONE_RE = /^[\d+\-\s()]{9,15}$/;
@@ -71,20 +72,23 @@ export function ContactForm() {
     }
 
     setStatus("sending");
-    const supabase = getSupabase()!;
-    const { error } = await supabase.from("contact_messages").insert({
-      name: name.trim(),
-      phone: phone.trim(),
-      message: message.trim(),
-      package: packageName,
-    });
-
-    if (error) {
+    try {
+      const { error } = await submitContactAction({
+        name: name.trim(),
+        phone: phone.trim(),
+        message: message.trim(),
+        packageName,
+      });
+      if (error) {
+        setStatus("idle");
+        setSubmitError(t("errors.generic"));
+        return;
+      }
+      setStatus("success");
+    } catch {
       setStatus("idle");
       setSubmitError(t("errors.generic"));
-      return;
     }
-    setStatus("success");
   };
 
   return (

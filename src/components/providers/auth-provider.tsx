@@ -7,17 +7,21 @@ import {
   useEffect,
   useState,
 } from "react";
-import type { User } from "@supabase/supabase-js";
-import { getSupabase, isSupabaseConfigured } from "@/lib/supabase/client";
+import {
+  getMeAction,
+  signOutAction,
+  type AuthUser,
+} from "@/app/actions/auth";
+import { isSupabaseConfigured } from "@/lib/supabase/client";
 import type { Profile } from "@/lib/types";
 
 type AuthContextValue = {
-  user: User | null;
+  user: AuthUser | null;
   profile: Profile | null;
   loading: boolean;
   configured: boolean;
   signOut: () => Promise<void>;
-  refreshProfile: () => Promise<void>;
+  refresh: () => Promise<void>;
 };
 
 const AuthContext = createContext<AuthContextValue>({
@@ -26,56 +30,43 @@ const AuthContext = createContext<AuthContextValue>({
   loading: true,
   configured: false,
   signOut: async () => {},
-  refreshProfile: async () => {},
+  refresh: async () => {},
 });
 
+/**
+ * Auth state lives in httpOnly cookies managed by Server Actions; the
+ * browser never talks to Supabase directly (content-filter friendly).
+ */
 export function AuthProvider({ children }: { children: React.ReactNode }) {
-  const [user, setUser] = useState<User | null>(null);
+  const [user, setUser] = useState<AuthUser | null>(null);
   const [profile, setProfile] = useState<Profile | null>(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const supabase = getSupabase();
-    if (!supabase) {
+  const refresh = useCallback(async () => {
+    if (!isSupabaseConfigured) {
+      setUser(null);
+      setProfile(null);
       setLoading(false);
       return;
     }
-
-    supabase.auth.getSession().then(({ data }) => {
-      setUser(data.session?.user ?? null);
-      setLoading(false);
-    });
-
-    const { data: subscription } = supabase.auth.onAuthStateChange(
-      (_event, session) => {
-        setUser(session?.user ?? null);
-      }
-    );
-
-    return () => subscription.subscription.unsubscribe();
+    try {
+      const me = await getMeAction();
+      setUser(me.user);
+      setProfile(me.profile);
+    } catch {
+      setUser(null);
+      setProfile(null);
+    }
+    setLoading(false);
   }, []);
 
-  const refreshProfile = useCallback(async () => {
-    const supabase = getSupabase();
-    if (!supabase || !user) {
-      setProfile(null);
-      return;
-    }
-    const { data } = await supabase
-      .from("profiles")
-      .select("id, full_name, phone, is_admin, created_at")
-      .eq("id", user.id)
-      .single();
-    setProfile((data as Profile) ?? null);
-  }, [user]);
-
   useEffect(() => {
-    refreshProfile();
-  }, [refreshProfile]);
+    refresh();
+  }, [refresh]);
 
   const signOut = useCallback(async () => {
-    const supabase = getSupabase();
-    if (supabase) await supabase.auth.signOut();
+    await signOutAction();
+    setUser(null);
     setProfile(null);
   }, []);
 
@@ -87,7 +78,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         loading,
         configured: isSupabaseConfigured,
         signOut,
-        refreshProfile,
+        refresh,
       }}
     >
       {children}

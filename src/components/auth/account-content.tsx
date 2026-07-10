@@ -18,7 +18,7 @@ import { Label } from "@/components/ui/label";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useAuth } from "@/components/providers/auth-provider";
-import { getSupabase } from "@/lib/supabase/client";
+import { updateProfileAction } from "@/app/actions/auth";
 import { WhatsAppIcon } from "@/components/shared/icons";
 import { whatsappLink } from "@/lib/site";
 
@@ -28,8 +28,7 @@ export function AccountContent() {
   const tNav = useTranslations("nav");
   const locale = useLocale();
   const router = useRouter();
-  const { user, profile, loading, configured, signOut, refreshProfile } =
-    useAuth();
+  const { user, profile, loading, configured, signOut, refresh } = useAuth();
 
   const [fullName, setFullName] = useState("");
   const [phone, setPhone] = useState("");
@@ -84,24 +83,27 @@ export function AccountContent() {
   const memberSince = new Intl.DateTimeFormat(
     locale === "he" ? "he-IL" : "en-US",
     { dateStyle: "long" }
-  ).format(new Date(profile?.created_at ?? user.created_at));
+  ).format(new Date(profile?.created_at ?? user.createdAt));
 
   const handleSave = async (e: React.FormEvent) => {
     e.preventDefault();
-    const supabase = getSupabase();
-    if (!supabase) return;
     setSaving(true);
-    const { error } = await supabase
-      .from("profiles")
-      .update({ full_name: fullName.trim(), phone: phone.trim() })
-      .eq("id", user.id);
-    setSaving(false);
-    if (error) {
+    try {
+      const { error } = await updateProfileAction({
+        fullName: fullName.trim(),
+        phone: phone.trim(),
+      });
+      if (error) {
+        toast.error(tAuth("errors.generic"));
+        return;
+      }
+      toast.success(t("saved"));
+      refresh();
+    } catch {
       toast.error(tAuth("errors.generic"));
-      return;
+    } finally {
+      setSaving(false);
     }
-    toast.success(t("saved"));
-    refreshProfile();
   };
 
   const handleSignOut = async () => {

@@ -8,13 +8,15 @@ import { Link, useRouter } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { getSupabase, isSupabaseConfigured } from "@/lib/supabase/client";
+import { useAuth } from "@/components/providers/auth-provider";
+import { signInAction, type AuthActionError } from "@/app/actions/auth";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export function LoginForm() {
   const t = useTranslations("auth");
   const router = useRouter();
+  const { configured, refresh } = useAuth();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -33,48 +35,44 @@ export function LoginForm() {
     return Object.keys(next).length === 0;
   };
 
+  const errorMessage = (code: AuthActionError) => {
+    switch (code) {
+      case "not_configured":
+        return t("errors.notConfigured");
+      case "invalid_credentials":
+        return t("errors.credentials");
+      case "email_not_confirmed":
+        return t("errors.emailNotConfirmed");
+      default:
+        return t("errors.generic");
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitError(null);
     if (!validate()) return;
 
-    const supabase = getSupabase();
-    if (!supabase) {
-      setSubmitError(t("errors.notConfigured"));
-      return;
-    }
-
     setSubmitting(true);
-    const { error } = await supabase.auth.signInWithPassword({
-      email: email.trim(),
-      password,
-    });
-    setSubmitting(false);
-
-    if (error) {
-      const message = error.message.toLowerCase();
-      const notConfirmed =
-        error.code === "email_not_confirmed" ||
-        message.includes("not confirmed");
-      const invalid =
-        error.code === "invalid_credentials" || message.includes("invalid");
-      setSubmitError(
-        notConfirmed
-          ? t("errors.emailNotConfirmed")
-          : invalid
-            ? t("errors.credentials")
-            : t("errors.generic")
-      );
-      return;
+    try {
+      const { error } = await signInAction(email.trim(), password);
+      if (error) {
+        setSubmitError(errorMessage(error));
+        return;
+      }
+      toast.success(t("login.success"));
+      await refresh();
+      router.push("/account");
+    } catch {
+      setSubmitError(t("errors.generic"));
+    } finally {
+      setSubmitting(false);
     }
-
-    toast.success(t("login.success"));
-    router.push("/account");
   };
 
   return (
     <form onSubmit={handleSubmit} noValidate className="space-y-5">
-      {!isSupabaseConfigured && (
+      {!configured && (
         <p
           className="flex items-start gap-2 rounded-lg border border-amber-500/30 bg-amber-500/10 p-3 text-sm text-amber-600 dark:text-amber-400"
           role="alert"

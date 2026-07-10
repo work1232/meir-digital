@@ -8,7 +8,8 @@ import { Link, useRouter } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { getSupabase, isSupabaseConfigured } from "@/lib/supabase/client";
+import { useAuth } from "@/components/providers/auth-provider";
+import { signUpAction, type AuthActionError } from "@/app/actions/auth";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_RE = /^[\d+\-\s()]{9,15}$/;
@@ -20,6 +21,7 @@ type Errors = Partial<
 export function RegisterForm() {
   const t = useTranslations("auth");
   const router = useRouter();
+  const { configured, refresh } = useAuth();
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -43,47 +45,52 @@ export function RegisterForm() {
     return Object.keys(next).length === 0;
   };
 
+  const errorMessage = (code: AuthActionError) => {
+    switch (code) {
+      case "not_configured":
+        return t("errors.notConfigured");
+      case "user_already_exists":
+        return t("errors.emailTaken");
+      default:
+        return t("errors.generic");
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitError(null);
     if (!validate()) return;
 
-    const supabase = getSupabase();
-    if (!supabase) {
-      setSubmitError(t("errors.notConfigured"));
-      return;
-    }
-
     setSubmitting(true);
-    const { data, error } = await supabase.auth.signUp({
-      email: email.trim(),
-      password,
-      options: {
-        data: { full_name: name.trim(), phone: phone.trim() },
-      },
-    });
-    setSubmitting(false);
+    try {
+      const result = await signUpAction({
+        name: name.trim(),
+        email: email.trim(),
+        phone: phone.trim(),
+        password,
+      });
 
-    if (error) {
-      const alreadyExists =
-        error.code === "user_already_exists" ||
-        error.message.toLowerCase().includes("already registered");
-      setSubmitError(
-        alreadyExists ? t("errors.emailTaken") : t("errors.generic")
-      );
-      return;
-    }
+      if (result.error) {
+        setSubmitError(errorMessage(result.error));
+        return;
+      }
 
-    toast.success(t("register.successTitle"), {
-      description: t("register.successDesc"),
-    });
+      toast.success(t("register.successTitle"), {
+        description: t("register.successDesc"),
+      });
 
-    if (data.session) {
-      router.push("/account");
-    } else {
-      // Email confirmation is enabled in Supabase — ask the user to log in
-      // after confirming.
-      setNeedsLogin(true);
+      if (result.needsConfirmation) {
+        // Email confirmation is enabled in Supabase — ask the user to log
+        // in after confirming.
+        setNeedsLogin(true);
+      } else {
+        await refresh();
+        router.push("/account");
+      }
+    } catch {
+      setSubmitError(t("errors.generic"));
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -105,7 +112,7 @@ export function RegisterForm() {
 
   return (
     <form onSubmit={handleSubmit} noValidate className="space-y-5">
-      {!isSupabaseConfigured && (
+      {!configured && (
         <p
           className="flex items-start gap-2 rounded-lg border border-amber-500/30 bg-amber-500/10 p-3 text-sm text-amber-600 dark:text-amber-400"
           role="alert"
