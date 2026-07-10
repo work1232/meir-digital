@@ -50,6 +50,9 @@ create policy "profiles_update_own"
   using (auth.uid() = id)
   with check (auth.uid() = id);
 
+-- Users may edit their own profile, but never their own admin flag.
+revoke update (is_admin) on public.profiles from anon, authenticated;
+
 -- Contact messages: anyone can submit; only admins can read/update.
 create policy "contact_messages_insert_anyone"
   on public.contact_messages for insert
