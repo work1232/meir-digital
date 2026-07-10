@@ -92,7 +92,7 @@
   "stats": {
     "title": "The numbers speak",
     "items": {
-      "delivery": { "value": "7", "suffix": "", "label": "working days to deliver a basic site" },
+      "delivery": { "value": "1", "suffix": "", "label": "working day to deliver a basic site" },
       "transparency": { "value": "100", "suffix": "%", "label": "transparency and clear expectations" },
       "packages": { "value": "3", "suffix": "", "label": "flexible packages for every budget" },
       "availability": { "value": "24", "suffix": "/6", "label": "high availability for every question" }
@@ -125,7 +125,7 @@
       },
       "fixes": {
         "title": "Free Revisions",
-        "desc": "Revision rounds are included in every package — up to unlimited in Premium"
+        "desc": "Revision rounds are included in every package — up to half a year in Premium"
       },
       "design": {
         "title": "Custom-Tailored Design",

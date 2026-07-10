@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { SpotlightOverlay } from "@/components/ui/spotlight-background";
 import { cn } from "@/lib/utils";
 
 /**
@@ -25,6 +26,7 @@ export function AnimatedBackground({
       aria-hidden="true"
     >
       <div className="absolute inset-0 bg-grid [mask-image:radial-gradient(ellipse_75%_60%_at_50%_35%,black,transparent)]" />
+      {variant === "hero" && <SpotlightOverlay />}
       <motion.div
         className={cn(
           "absolute -top-32 start-[10%] h-96 w-96 rounded-full bg-[oklch(0.62_0.28_331)] blur-[120px]",

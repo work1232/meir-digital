@@ -18,16 +18,21 @@ export function AnimatedCounter({
   const spring = useSpring(motionValue, { duration: 1600, bounce: 0 });
 
   useEffect(() => {
-    if (inView) motionValue.set(value);
-  }, [inView, value, motionValue]);
-
-  useEffect(
-    () =>
-      spring.on("change", (latest) => {
-        if (ref.current) ref.current.textContent = String(Math.round(latest));
-      }),
-    [spring]
-  );
+    if (!inView) return;
+    // Subscribe before setting the target, so an instant jump (e.g. under
+    // prefers-reduced-motion) is not missed.
+    const unsubscribe = spring.on("change", (latest) => {
+      if (ref.current) ref.current.textContent = String(Math.round(latest));
+    });
+    motionValue.set(value);
+    const fallback = setTimeout(() => {
+      if (ref.current) ref.current.textContent = String(value);
+    }, 2000);
+    return () => {
+      unsubscribe();
+      clearTimeout(fallback);
+    };
+  }, [inView, value, motionValue, spring]);
 
   return (
     <span className={className} dir="ltr">
