@@ -20,6 +20,12 @@ export function AuthShell({
           <p className="text-sm text-muted-foreground">{subtitle}</p>
         </div>
         {children}
+        <p
+          className="mt-6 text-center text-[10px] tracking-widest text-muted-foreground/50"
+          dir="ltr"
+        >
+          v3
+        </p>
       </div>
     </section>
   );

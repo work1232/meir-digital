@@ -6,6 +6,12 @@
       "runtimeExecutable": "C:\\Users\\meir\\website\\scripts\\dev.cmd",
       "runtimeArgs": [],
       "port": 3000
+    },
+    {
+      "name": "prod",
+      "runtimeExecutable": "C:\\Users\\meir\\website\\scripts\\prod.cmd",
+      "runtimeArgs": [],
+      "port": 3001
     }
   ]
 }
