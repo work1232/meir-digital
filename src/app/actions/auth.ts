@@ -19,7 +19,7 @@ export type AuthUser = {
 export async function signInAction(
   email: string,
   password: string
-): Promise<{ error: AuthActionError | null; detail?: string }> {
+): Promise<{ error: AuthActionError | null }> {
   const supabase = await createClient();
   if (!supabase) return { error: "not_configured" };
 
@@ -38,15 +38,9 @@ export async function signInAction(
       return { error: "email_not_confirmed" };
     if (error.code === "invalid_credentials" || message.includes("invalid"))
       return { error: "invalid_credentials" };
-    return {
-      error: "unknown",
-      detail: `server: ${error.status ?? ""} ${error.code ?? ""} ${error.message}`.trim(),
-    };
-  } catch (e) {
-    return {
-      error: "unknown",
-      detail: `server-exception: ${e instanceof Error ? e.message : String(e)}`,
-    };
+    return { error: "unknown" };
+  } catch {
+    return { error: "unknown" };
   }
 }
 

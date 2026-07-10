@@ -55,19 +55,16 @@ export function LoginForm() {
 
     setSubmitting(true);
     try {
-      const { error, detail } = await signInAction(email.trim(), password);
+      const { error } = await signInAction(email.trim(), password);
       if (error) {
-        setSubmitError(
-          errorMessage(error) + (detail ? ` — [${detail}]` : "")
-        );
+        setSubmitError(errorMessage(error));
         return;
       }
       toast.success(t("login.success"));
       await refresh();
       router.push("/account");
-    } catch (e) {
-      const reason = e instanceof Error ? e.message : String(e);
-      setSubmitError(`${t("errors.generic")} — [client: ${reason}]`);
+    } catch {
+      setSubmitError(t("errors.generic"));
     } finally {
       setSubmitting(false);
     }
