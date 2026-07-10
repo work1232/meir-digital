@@ -23,7 +23,7 @@ export function ProcessSection() {
             className="absolute inset-x-[10%] top-7 hidden h-px bg-gradient-to-r from-transparent via-border to-transparent lg:block"
             aria-hidden
           />
-          <ol className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5 lg:gap-6">
+          <ol className="grid grid-cols-2 gap-6 max-lg:[&>*:last-child]:col-span-2 sm:gap-10 lg:grid-cols-5 lg:gap-6">
             {STEP_ICONS.map((Icon, i) => (
               <Reveal key={i} delay={i * 0.1}>
                 <li className="relative flex flex-col items-center text-center lg:px-2">

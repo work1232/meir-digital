@@ -51,7 +51,7 @@ export function PricingPlans() {
               title={t("title")}
               subtitle={t("subtitle")}
             />
-            <div className="flex flex-col items-center justify-center gap-8 md:flex-row md:items-stretch md:gap-6">
+            <div className="flex flex-row items-stretch justify-center gap-2 sm:gap-4 md:gap-6">
               {PLAN_KEYS.map((key) => {
                 const popular = key === "business";
                 return (

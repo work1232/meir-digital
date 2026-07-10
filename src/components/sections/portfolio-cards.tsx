@@ -89,7 +89,7 @@ export function ConceptsGrid() {
   }[];
 
   return (
-    <div className="grid gap-6 md:grid-cols-3">
+    <div className="grid grid-cols-2 gap-4 max-md:[&>*:last-child]:col-span-2 md:grid-cols-3 md:gap-6">
       {concepts.map((concept, i) => {
         const style = CONCEPT_STYLES[i % CONCEPT_STYLES.length];
         return (

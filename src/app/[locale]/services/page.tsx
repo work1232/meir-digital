@@ -60,7 +60,7 @@ function ServicesContent() {
             title={t("offeringsTitle")}
             subtitle={t("offeringsSubtitle")}
           />
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid grid-cols-2 gap-4 max-md:[&>*:last-child]:col-span-2 md:grid-cols-3 md:gap-6">
             {OFFERINGS.map((offering, i) => {
               const features = t.raw(
                 `offerings.${offering.key}.features`
@@ -69,7 +69,7 @@ function ServicesContent() {
                 <Reveal
                   key={offering.key}
                   delay={i * 0.1}
-                  className="group flex flex-col rounded-3xl border border-border bg-card/60 p-8 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-brand-2/40 hover:glow-sm"
+                  className="group flex flex-col rounded-3xl border border-border bg-card/60 p-5 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-brand-2/40 hover:glow-sm md:p-8"
                 >
                   <span className="mb-5 inline-flex size-14 items-center justify-center rounded-2xl bg-secondary text-brand-2 transition-all duration-300 group-hover:bg-brand-gradient group-hover:text-white">
                     <offering.icon className="size-7" />

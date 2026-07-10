@@ -218,7 +218,7 @@ export const PricingCard = ({
   onSelect,
 }: PricingCardProps) => {
   const cardClasses = `
-    backdrop-blur-[14px] bg-gradient-to-br rounded-2xl shadow-xl flex-1 w-full max-w-xs px-7 py-8 flex flex-col transition-all duration-300
+    backdrop-blur-[14px] bg-gradient-to-br rounded-2xl shadow-xl flex-1 w-full md:max-w-xs px-3 py-4 sm:px-5 sm:py-6 md:px-7 md:py-8 flex flex-col transition-all duration-300
     from-black/5 to-black/0 border border-black/10
     dark:from-white/10 dark:to-white/5 dark:border-white/10 dark:backdrop-brightness-[0.91]
     ${
@@ -228,7 +228,7 @@ export const PricingCard = ({
     }
   `;
   const buttonClasses = `
-    mt-auto w-full py-2.5 rounded-xl font-semibold text-[14px] transition font-sans
+    mt-auto w-full py-1.5 text-[10px] sm:text-xs md:py-2.5 md:text-[14px] rounded-xl font-semibold transition font-sans
     ${
       buttonVariant === "primary"
         ? "bg-brand-gradient hover:brightness-110 text-white shadow-md"
@@ -239,37 +239,38 @@ export const PricingCard = ({
   return (
     <div className={cardClasses.trim()}>
       {isPopular && popularLabel && (
-        <div className="absolute -top-4 end-4 rounded-full bg-brand-gradient px-3 py-1 text-[12px] font-semibold text-white shadow-md">
+        <div className="absolute -top-3 end-2 rounded-full bg-brand-gradient px-2 py-0.5 text-[9px] font-semibold text-white shadow-md sm:text-[11px] md:-top-4 md:end-4 md:px-3 md:py-1 md:text-[12px]">
           {popularLabel}
         </div>
       )}
-      <div className="mb-3">
-        <h3 className="font-heading text-[34px] font-bold tracking-tight text-foreground">
+      <div className="mb-2 md:mb-3">
+        <h3 className="font-heading text-lg font-bold tracking-tight text-foreground sm:text-2xl md:text-[34px]">
           {planName}
         </h3>
-        <p className="mt-1 font-sans text-[15px] text-foreground/70">
+        <p className="mt-1 font-sans text-[10px] text-foreground/70 sm:text-sm md:text-[15px]">
           {description}
         </p>
       </div>
-      <div className="my-6 flex items-baseline gap-2">
+      <div className="my-3 flex flex-wrap items-baseline gap-1 sm:gap-2 md:my-6">
         <span
-          className="font-heading text-[48px] font-extrabold text-gradient"
+          className="font-heading text-xl font-extrabold text-gradient sm:text-3xl md:text-[48px]"
           dir="ltr"
         >
           {currency}
           {price}
         </span>
         {periodLabel && (
-          <span className="font-sans text-[14px] text-foreground/70">
+          <span className="font-sans text-[9px] text-foreground/70 sm:text-xs md:text-[14px]">
             {periodLabel}
           </span>
         )}
       </div>
-      <div className="mb-5 h-px w-full bg-[linear-gradient(90deg,transparent,rgba(0,0,0,0.1)_50%,transparent)] dark:bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.09)_20%,rgba(255,255,255,0.22)_50%,rgba(255,255,255,0.09)_80%,transparent)]" />
-      <ul className="mb-6 flex flex-col gap-2 font-sans text-[14px] text-foreground/90">
+      <div className="mb-3 h-px w-full bg-[linear-gradient(90deg,transparent,rgba(0,0,0,0.1)_50%,transparent)] dark:bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.09)_20%,rgba(255,255,255,0.22)_50%,rgba(255,255,255,0.09)_80%,transparent)] md:mb-5" />
+      <ul className="mb-4 flex flex-col gap-1.5 font-sans text-[9.5px] leading-tight text-foreground/90 sm:text-xs sm:leading-normal md:mb-6 md:gap-2 md:text-[14px]">
         {features.map((feature, index) => (
-          <li key={index} className="flex items-center gap-2">
-            <CheckIcon className="h-4 w-4 shrink-0 text-brand-1" /> {feature}
+          <li key={index} className="flex items-center gap-1.5 md:gap-2">
+            <CheckIcon className="h-2.5 w-2.5 shrink-0 text-brand-1 sm:h-3.5 sm:w-3.5 md:h-4 md:w-4" />{" "}
+            {feature}
           </li>
         ))}
       </ul>

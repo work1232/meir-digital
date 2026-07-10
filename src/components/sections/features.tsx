@@ -27,13 +27,13 @@ export function Features() {
     <section className="relative py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionHeading kicker={t("kicker")} title={t("title")} />
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
           {FEATURES.map((feature, i) => (
             <Reveal
               key={feature.key}
               delay={i * 0.07}
               className={cn(
-                "group relative overflow-hidden rounded-2xl border border-border bg-card/60 p-6 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-brand-2/40 hover:glow-sm",
+                "group relative overflow-hidden rounded-2xl border border-border bg-card/60 p-4 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-brand-2/40 hover:glow-sm md:p-6",
                 feature.wide && "lg:col-span-2"
               )}
             >
