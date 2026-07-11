@@ -26,9 +26,9 @@ export default async function FaqPage({
     <>
       <div className="relative overflow-hidden pt-14">
         <AnimatedBackground variant="subtle" />
-        <FaqSection />
+        <FaqSection backdrop="/images/question-1.jpg" />
       </div>
-      <CtaSection />
+      <CtaSection backdrop="/images/question-2.jpg" />
     </>
   );
 }

@@ -7,8 +7,15 @@ import {
 } from "@/components/ui/accordion";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { Reveal } from "@/components/shared/reveal";
+import { ImageBackdrop } from "@/components/shared/image-backdrop";
 
-export function FaqSection({ limit }: { limit?: number }) {
+export function FaqSection({
+  limit,
+  backdrop,
+}: {
+  limit?: number;
+  backdrop?: string;
+}) {
   const t = useTranslations("faq");
   const items = (t.raw("items") as { q: string; a: string }[]).slice(
     0,
@@ -16,7 +23,8 @@ export function FaqSection({ limit }: { limit?: number }) {
   );
 
   return (
-    <section className="relative py-20 md:py-28">
+    <section className="relative overflow-hidden py-20 md:py-28">
+      {backdrop && <ImageBackdrop src={backdrop} />}
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
         <SectionHeading
           kicker={t("kicker")}

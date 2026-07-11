@@ -1,13 +1,15 @@
 import { useTranslations } from "next-intl";
 import { Reveal } from "@/components/shared/reveal";
 import { WhatsAppIcon } from "@/components/shared/icons";
+import { ImageBackdrop } from "@/components/shared/image-backdrop";
 import { site, whatsappLink } from "@/lib/site";
 
-export function CtaSection() {
+export function CtaSection({ backdrop }: { backdrop?: string }) {
   const t = useTranslations("cta");
 
   return (
-    <section className="py-20 md:py-28">
+    <section className="relative overflow-hidden py-20 md:py-28">
+      {backdrop && <ImageBackdrop src={backdrop} />}
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <Reveal>
           <div className="relative overflow-hidden rounded-3xl bg-brand-gradient px-6 py-16 text-center text-white shadow-2xl md:px-16 md:py-20">

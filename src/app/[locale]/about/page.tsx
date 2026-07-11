@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
 import { AnimatedBackground } from "@/components/shared/animated-background";
+import { ImageBackdrop } from "@/components/shared/image-backdrop";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { Reveal } from "@/components/shared/reveal";
 import { WhatsAppButton } from "@/components/shared/whatsapp-button";
@@ -37,6 +38,7 @@ function AboutContent() {
     <>
       <section className="relative overflow-hidden pb-16 pt-36">
         <AnimatedBackground variant="subtle" />
+        <ImageBackdrop src="/images/about-1.jpg" priority />
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <SectionHeading
             as="h1"
@@ -47,7 +49,8 @@ function AboutContent() {
         </div>
       </section>
 
-      <section className="pb-20">
+      <section className="relative overflow-hidden pb-20">
+        <ImageBackdrop src="/images/about-2.jpg" />
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2">
           <Reveal>
             <div className="relative mx-auto flex aspect-square w-full max-w-sm items-center justify-center rounded-3xl border border-border bg-card/60 backdrop-blur">

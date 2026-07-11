@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
 import { Clock, Phone } from "lucide-react";
 import { AnimatedBackground } from "@/components/shared/animated-background";
+import { ImageBackdrop } from "@/components/shared/image-backdrop";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { Reveal } from "@/components/shared/reveal";
 import { WhatsAppIcon } from "@/components/shared/icons";
@@ -35,6 +36,8 @@ function ContactContent() {
   return (
     <section className="relative overflow-hidden pb-24 pt-36">
       <AnimatedBackground variant="subtle" />
+      <ImageBackdrop src="/images/whatsapp-1.jpg" position="top" priority />
+      <ImageBackdrop src="/images/whatsapp-2.jpg" position="bottom" />
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionHeading
           as="h1"

@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/animated-glassy-pricing";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { Reveal } from "@/components/shared/reveal";
+import { ImageBackdrop } from "@/components/shared/image-backdrop";
 import {
   Table,
   TableBody,
@@ -85,7 +86,8 @@ export function PricingPlans() {
           </div>
         </section>
 
-        <section className="pb-24">
+        <section className="relative overflow-hidden pb-24">
+          <ImageBackdrop src="/images/package-1.jpg" />
           <div className="mx-auto max-w-5xl px-4 sm:px-6">
             <SectionHeading title={t("comparison.title")} />
             <Reveal>

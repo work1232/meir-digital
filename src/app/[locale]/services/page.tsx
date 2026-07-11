@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
 import { Check, Layers, MonitorSmartphone, Rocket } from "lucide-react";
 import { AnimatedBackground } from "@/components/shared/animated-background";
+import { ImageBackdrop } from "@/components/shared/image-backdrop";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { Reveal } from "@/components/shared/reveal";
 import { WhatsAppButton } from "@/components/shared/whatsapp-button";
@@ -43,6 +44,7 @@ function ServicesContent() {
     <>
       <section className="relative overflow-hidden pb-16 pt-36">
         <AnimatedBackground variant="subtle" />
+        <ImageBackdrop src="/images/services-1.jpg" priority />
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <SectionHeading
             as="h1"
@@ -54,7 +56,8 @@ function ServicesContent() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24">
+      <section className="relative overflow-hidden py-16 md:py-24">
+        <ImageBackdrop src="/images/services-2.jpg" />
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <SectionHeading
             title={t("offeringsTitle")}
