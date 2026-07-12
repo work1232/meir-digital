@@ -49,8 +49,7 @@ function AboutContent() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden pb-20">
-        <ImageBackdrop src="/images/about-2.jpg" />
+      <section className="pb-20">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2">
           <Reveal>
             <div className="relative mx-auto flex aspect-square w-full max-w-sm items-center justify-center rounded-3xl border border-border bg-card/60 backdrop-blur">
@@ -86,7 +85,8 @@ function AboutContent() {
         </div>
       </section>
 
-      <section className="pb-20">
+      <section className="relative overflow-hidden pb-20">
+        <ImageBackdrop src="/images/about-2.jpg" />
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <SectionHeading title={t("valuesTitle")} />
           <ValuesGrid />

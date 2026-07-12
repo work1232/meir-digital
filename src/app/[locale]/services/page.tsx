@@ -44,7 +44,7 @@ function ServicesContent() {
     <>
       <section className="relative overflow-hidden pb-16 pt-36">
         <AnimatedBackground variant="subtle" />
-        <ImageBackdrop src="/images/services-1.jpg" priority />
+        <ImageBackdrop src="/images/services-1.jpg" position="top" priority />
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <SectionHeading
             as="h1"
@@ -56,8 +56,7 @@ function ServicesContent() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden py-16 md:py-24">
-        <ImageBackdrop src="/images/services-2.jpg" />
+      <section className="py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <SectionHeading
             title={t("offeringsTitle")}
@@ -107,7 +106,7 @@ function ServicesContent() {
         </div>
       </section>
 
-      <CtaSection />
+      <CtaSection backdrop="/images/services-2.jpg" />
     </>
   );
 }

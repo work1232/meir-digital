@@ -24,7 +24,7 @@ export function FaqSection({
 
   return (
     <section className="relative overflow-hidden py-20 md:py-28">
-      {backdrop && <ImageBackdrop src={backdrop} />}
+      {backdrop && <ImageBackdrop src={backdrop} position="top" />}
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
         <SectionHeading
           kicker={t("kicker")}

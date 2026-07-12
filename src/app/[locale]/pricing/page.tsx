@@ -26,8 +26,8 @@ export default async function PricingPage({
     <>
       <PricingPlans />
       <div className="relative z-10 bg-background/80 backdrop-blur-sm">
-        <FaqSection limit={4} backdrop="/images/package-2.jpg" />
-        <CtaSection />
+        <FaqSection limit={4} />
+        <CtaSection backdrop="/images/package-2.jpg" />
       </div>
     </>
   );

@@ -36,8 +36,17 @@ function ContactContent() {
   return (
     <section className="relative overflow-hidden pb-24 pt-36">
       <AnimatedBackground variant="subtle" />
-      <ImageBackdrop src="/images/whatsapp-1.jpg" position="top" priority />
-      <ImageBackdrop src="/images/whatsapp-2.jpg" position="bottom" />
+      <ImageBackdrop
+        src="/images/whatsapp-1.jpg"
+        position="top"
+        className="h-[24rem]"
+        priority
+      />
+      <ImageBackdrop
+        src="/images/whatsapp-2.jpg"
+        position="bottom"
+        className="h-[26rem]"
+      />
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionHeading
           as="h1"

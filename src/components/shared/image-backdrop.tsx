@@ -33,7 +33,7 @@ export function ImageBackdrop({
         fill
         sizes="100vw"
         priority={priority}
-        className="object-cover opacity-25 saturate-[0.65] dark:opacity-[0.15]"
+        className="object-cover opacity-40 saturate-[0.75] dark:opacity-[0.28]"
       />
       <div
         className={cn(
