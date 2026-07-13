@@ -24,7 +24,7 @@ export function WhatsAppButton({
         "inline-flex items-center justify-center gap-2 rounded-xl font-semibold transition-all duration-300 active:scale-[0.98]",
         size === "lg" ? "px-6 py-3 text-base" : "px-4 py-2 text-sm",
         variant === "gradient"
-          ? "bg-brand-gradient text-white shadow-lg glow-sm hover:brightness-110 hover:glow"
+          ? "btn-sheen bg-brand-gradient text-white shadow-lg glow-sm hover:brightness-110 hover:glow"
           : "border border-border bg-secondary/50 text-foreground backdrop-blur hover:bg-secondary",
         className
       )}

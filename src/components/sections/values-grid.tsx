@@ -18,7 +18,7 @@ export function ValuesGrid() {
         <Reveal
           key={value.key}
           delay={i * 0.08}
-          className="group rounded-2xl border border-border bg-card/60 p-4 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-brand-2/40 hover:glow-sm md:p-6"
+          className="card-lux group rounded-2xl border border-border bg-card/60 p-4 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-brand-2/40 hover:glow-sm md:p-6"
         >
           <span className="mb-4 inline-flex size-12 items-center justify-center rounded-xl bg-secondary text-brand-2 transition-all duration-300 group-hover:bg-brand-gradient group-hover:text-white">
             <value.icon className="size-6" />

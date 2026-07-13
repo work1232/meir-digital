@@ -32,10 +32,18 @@ export function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="font-heading text-4xl font-extrabold leading-[1.12] tracking-tight sm:text-5xl xl:text-6xl"
+            className="font-display text-[2.75rem] leading-[1.08] tracking-tight sm:text-6xl xl:text-7xl"
           >
             <span className="block">{t("titleLine1")}</span>
-            <span className="block text-gradient">{t("titleLine2")}</span>
+            <span className="relative inline-block">
+              <span className="text-gradient">{t("titleLine2")}</span>
+              <motion.span
+                className="absolute -bottom-2 start-0 h-[3px] w-full origin-[right_center] rounded-full bg-brand-gradient rtl:origin-[right_center]"
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 0.7, delay: 0.9, ease: "easeOut" }}
+              />
+            </span>
           </motion.h1>
 
           <motion.p

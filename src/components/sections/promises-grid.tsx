@@ -18,7 +18,7 @@ export function PromisesGrid() {
         <Reveal
           key={promise.key}
           delay={i * 0.08}
-          className="group relative overflow-hidden rounded-2xl border border-border bg-card/60 p-4 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-brand-2/40 hover:glow-sm md:p-6"
+          className="card-lux group relative overflow-hidden rounded-2xl border border-border bg-card/60 p-4 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-brand-2/40 hover:glow-sm md:p-6"
         >
           <div
             className="absolute -end-10 -top-10 size-28 rounded-full bg-brand-gradient opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-25"

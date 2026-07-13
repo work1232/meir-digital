@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { Reveal } from "./reveal";
+import { StreamMotif } from "./stream-motif";
 
 export function SectionHeading({
   kicker,
@@ -25,12 +26,12 @@ export function SectionHeading({
       )}
     >
       {kicker && (
-        <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/60 px-4 py-1.5 text-sm font-medium text-muted-foreground backdrop-blur">
-          <span className="h-1.5 w-1.5 rounded-full bg-brand-gradient" aria-hidden />
+        <span className="inline-flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-brand-2">
+          <StreamMotif dots={4} />
           {kicker}
         </span>
       )}
-      <Tag className="font-heading text-3xl font-bold tracking-tight text-balance sm:text-4xl md:text-5xl">
+      <Tag className="font-display text-3xl leading-[1.1] tracking-tight text-balance sm:text-4xl md:text-[3.25rem]">
         {title}
       </Tag>
       {subtitle && (

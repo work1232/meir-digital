@@ -33,7 +33,7 @@ export function Features() {
               key={feature.key}
               delay={i * 0.07}
               className={cn(
-                "group relative overflow-hidden rounded-2xl border border-border bg-card/60 p-4 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-brand-2/40 hover:glow-sm md:p-6",
+                "card-lux group relative overflow-hidden rounded-2xl border border-border bg-card/60 p-4 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-brand-2/40 hover:glow-sm md:p-6",
                 feature.wide && "lg:col-span-2"
               )}
             >

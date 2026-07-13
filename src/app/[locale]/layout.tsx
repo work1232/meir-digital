@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist_Mono, Heebo, Rubik } from "next/font/google";
+import { Geist_Mono, Heebo, Rubik, Suez_One } from "next/font/google";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -29,6 +29,12 @@ const heebo = Heebo({
 const geistMono = Geist_Mono({
   subsets: ["latin"],
   variable: "--font-geist-mono",
+});
+
+const suezOne = Suez_One({
+  weight: "400",
+  subsets: ["hebrew", "latin"],
+  variable: "--font-suez",
 });
 
 export function generateStaticParams() {
@@ -76,7 +82,7 @@ export default async function LocaleLayout({
       lang={locale}
       dir={dir}
       suppressHydrationWarning
-      className={`${rubik.variable} ${heebo.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${rubik.variable} ${heebo.variable} ${geistMono.variable} ${suezOne.variable} h-full antialiased`}
     >
       <body className="flex min-h-svh flex-col overflow-x-clip">
         <NextIntlClientProvider>

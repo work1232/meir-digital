@@ -23,7 +23,7 @@ export function CtaSection({ backdrop }: { backdrop?: string }) {
               aria-hidden
             />
             <div className="relative">
-              <h2 className="font-heading text-3xl font-extrabold text-balance sm:text-4xl md:text-5xl">
+              <h2 className="font-display text-3xl leading-[1.1] text-balance sm:text-4xl md:text-5xl">
                 {t("title")}
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-white/85 text-pretty md:text-lg">

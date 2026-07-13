@@ -11,8 +11,15 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative border-t border-border bg-gradient-to-b from-background to-secondary/40">
-      <div className="mx-auto max-w-7xl px-4 pb-32 pt-16 sm:px-6">
+    <footer className="relative overflow-hidden border-t border-border bg-gradient-to-b from-background to-secondary/40">
+      <span
+        className="pointer-events-none absolute -bottom-8 start-1/2 -translate-x-1/2 select-none whitespace-nowrap font-display text-[24vw] leading-none text-foreground/[0.03] rtl:translate-x-1/2 md:text-[16vw]"
+        aria-hidden
+        dir="ltr"
+      >
+        MEIR DIGITAL
+      </span>
+      <div className="relative mx-auto max-w-7xl px-4 pb-32 pt-16 sm:px-6">
         <div className="grid gap-10 md:grid-cols-[1.5fr_1fr_1fr_1.2fr]">
           <div className="flex flex-col gap-4">
             <Link href="/" aria-label={t("common.brand")} className="w-fit">
