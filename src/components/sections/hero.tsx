@@ -37,11 +37,9 @@ export function Hero() {
             <span className="block">{t("titleLine1")}</span>
             <span className="relative inline-block">
               <span className="text-gradient">{t("titleLine2")}</span>
-              <motion.span
-                className="absolute -bottom-2 start-0 h-[3px] w-full origin-[right_center] rounded-full bg-brand-gradient rtl:origin-[right_center]"
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
-                transition={{ duration: 0.7, delay: 0.9, ease: "easeOut" }}
+              <span
+                className="hero-underline pointer-events-none absolute inset-x-0 -bottom-2 h-[3px] rounded-full bg-brand-gradient"
+                aria-hidden
               />
             </span>
           </motion.h1>

@@ -229,6 +229,24 @@
   box-shadow: 0 0 48px -8px color-mix(in oklab, var(--brand-2) 55%, transparent);
 }
 
+/* Hero title underline: always visible; only motion-OK users see it draw. */
+@keyframes hero-underline-draw {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-underline {
+    transform: scaleX(0);
+    transform-origin: right center;
+    animation: hero-underline-draw 0.7s ease-out 0.9s forwards;
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

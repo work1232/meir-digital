@@ -13,7 +13,7 @@ export function Footer() {
   return (
     <footer className="relative overflow-hidden border-t border-border bg-gradient-to-b from-background to-secondary/40">
       <span
-        className="pointer-events-none absolute -bottom-8 start-1/2 -translate-x-1/2 select-none whitespace-nowrap font-display text-[24vw] leading-none text-foreground/[0.03] rtl:translate-x-1/2 md:text-[16vw]"
+        className="pointer-events-none absolute -bottom-6 left-1/2 -translate-x-1/2 select-none whitespace-nowrap font-display text-[15vw] leading-none text-foreground/[0.035] md:text-[16vw]"
         aria-hidden
         dir="ltr"
       >
